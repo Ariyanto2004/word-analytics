@@ -12,10 +12,7 @@ const inputHandler = () => {
   }
 
   // determine new numbers
-  let numberOfWords = textareaEl.value.split(' ').length;
-  if (textareaEl.value.length === 0) {
-    numberOfWords = 0;
-  }
+  let numberOfWords = (textareaEl.value.match(/\b\w+\b/g) || []).length;
   const numberOfCharacters = textareaEl.value.length;
   const twitterCharactersLeft = 280 - numberOfCharacters;
   const facebookCharactersLeft = 2200 - numberOfCharacters;
